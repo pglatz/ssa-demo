@@ -1,0 +1,7 @@
+name: CRS activities in Sub Sharan Africa
+type: module
+description: 'Standalone webpage that displays the data of 500 Catholic Relief Services implemented programs in Sub-Saharan Africa.'
+package: Crs
+core_version_requirement: ^9
+
+version: '1.0.0'

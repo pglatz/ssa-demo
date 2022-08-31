@@ -1,0 +1,12 @@
+<div{{ attributes }} id="ssa-block-content">
+  <div class="inner">
+    <div class="config-form">
+      <div class="inner">{{ config_form }}</div>
+    </div>
+    {% if data %}
+      <div class="data">
+        <div class="inner">{{ data|raw }}</div>
+      </div>
+    {% endif %}
+  </div>
+</div>

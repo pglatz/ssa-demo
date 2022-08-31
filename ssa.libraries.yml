@@ -1,0 +1,5 @@
+ssa:
+  Version: 1.00
+  css:
+    theme:
+      css/ssa.css: {}

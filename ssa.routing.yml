@@ -1,0 +1,7 @@
+ssa.page:
+  path: '/sub_saharan_africa'
+  defaults:
+    _controller: '\Drupal\ssa\Controller\SsaController::ssaPage'
+    _title: 'Catholic Relief Services implemented programs in Sub-Saharan Africa'
+  requirements:
+    _permission: 'access content'

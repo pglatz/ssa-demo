@@ -1,0 +1,43 @@
+<?php
+
+use Drupal\Core\Link;
+use Drupal\Core\Url;
+
+
+/**
+ * Implements hook_theme().
+ *
+ * https://drupal.stackexchange.com/questions/211258/passing-variables-to-custom-block
+ */
+function ssa_theme($existing, $type, $theme, $path): array {
+  $ret = [
+    'ssa-page' => [
+      'variables' => [
+        'filter_form' => NULL,  // the filter form
+        'content' => NULL,      // the page content
+      ]
+    ],
+    'ssa_block' => [
+      'variables' => [
+        'config_form' => NULL,  // the config form
+        'data' => NULL,         // results from form submission
+      ]
+    ],
+  ];
+
+  return $ret;
+}
+
+
+/***
+ * module preprocess page function
+ *
+ * @param $variables
+ */
+function ssa_preprocess_page(&$variables) {
+  $current_path = \Drupal::service('path.current')->getPath();
+  $alias = \Drupal::service('path_alias.manager')->getAliasByPath($current_path);
+  if ($alias === '/sub_saharan_africa') {
+    $variables['#attached']['library'][] = 'ssa/ssa';
+  }
+}
